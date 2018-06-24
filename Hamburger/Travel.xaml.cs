@@ -26,36 +26,6 @@ namespace Hamburger
         {
             this.InitializeComponent();
         }
-        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
-        }
-
-        private void Home_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
-        }
-
-        private void Finance_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Finance));
-        }
-
-        private void Food_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Food));
-        }
-
-        private void Travel_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Travel));
-        }
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (Frame.CanGoBack)
-            {
-                Frame.GoBack();
-            }
-        }
+       
     }
 }

@@ -6,63 +6,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    >
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-        <RelativePanel Margin="4,15,6,0">
-            <Button Name="HamburgerButton" FontFamily="Segoe MDL2 assets" Content="&#xE700;" Click="HamburgerButton_Click"/>
-            <Button Name="BackButton" RelativePanel.RightOf="HamburgerButton" FontFamily="Segoe MDL2 assets" Content="&#xE112;" Click="BackButton_Click"/>
-            <TextBlock Text="Travel" RelativePanel.RightOf="BackButton" RelativePanel.AlignVerticalCenterWith="HamburgerButton"  Margin="10,0,0,0"/>
-            <Button Name="SearchButton" RelativePanel.AlignRightWithPanel="True" FontFamily="Segoe MDL2 assets" FontSize="18" Content="&#xE71E;"/>
-            <TextBox PlaceholderText="Search" Name="SearchBox" RelativePanel.LeftOf="SearchButton" MinWidth="200"/>
+        
+        <RelativePanel Margin="20,5,0,0">
+            <Image Source="Assets/Airplane.png" Name="FnImg" RelativePanel.AlignLeftWithPanel="True" MaxHeight="200" MinWidth="400" Margin="30,10,0,0"/>
+            <Image Source="Assets/RailTrack.png" RelativePanel.RightOf="FnImg" MaxHeight="200" MinWidth="400" Margin="30,10,0,-0.4" />
+            <Image Source="Assets/Landscape.png" RelativePanel.Below="FnImg" MaxHeight="200" MinWidth="400" Margin="30,10,-585.4,-0.4"/>
         </RelativePanel>
-
-        <SplitView Name="mySplitView" Grid.Row="1" OpenPaneLength="225" CompactPaneLength="40" DisplayMode="CompactInline">
-            <SplitView.Pane>
-                <ListBox>
-                    <ListBoxItem Name="HomeListBox" Tapped="Home_Tapped">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 assets" FontSize="18" Text="&#xE10F;"/>
-                            <TextBlock Margin="10,0,0,0" Text="Home"/>
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem Name="FinanceListBox" Tapped="Finance_Tapped">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 assets" FontSize="18" Text="&#xE825;"/>
-                            <TextBlock Margin="10,0,0,0" Text="Finance"/>
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem Name="FoodListBox" Tapped="Food_Tapped">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 assets" FontSize="18" Text="&#xED56;"/>
-                            <TextBlock Margin="10,0,0,0" Text="Food"/>
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem Name="TravelListBox" Tapped="Travel_Tapped">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 assets" FontSize="18" Text="&#xE709;"/>
-                            <TextBlock Margin="10,0,0,0" Text="Travel"/>
-                        </StackPanel>
-                    </ListBoxItem>
-                </ListBox>
-            </SplitView.Pane>
-            <SplitView.Content>
-                <RelativePanel Margin="20,5,0,0" Background="SteelBlue">
-                    <Image Source="Assets/Airplane.png" Name="FnImg" RelativePanel.AlignLeftWithPanel="True" Height="403" Width="480" Margin="30,10,0,0"/>
-                    <Image Source="Assets/RailTrack.png" RelativePanel.RightOf="FnImg" Height="401" Width="480" Margin="30,10,0,-0.4" />
-                    <Image Source="Assets/Landscape.png" RelativePanel.Below="FnImg" Height="425" Width="990" Margin="30,10,-585.4,-0.4"/>
-                </RelativePanel>
-            </SplitView.Content>
-        </SplitView>
-        <RelativePanel Grid.Row="2" >
-            <TextBlock Text="Items: 3" RelativePanel.AlignLeftWithPanel="True" Margin="20,0,0,0"/>
-            <TextBlock Text="Developer: Naveen" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
-            <TextBlock Text="Version: 1.0" RelativePanel.AlignRightWithPanel="True" Margin="0,0,20,0"/>
-        </RelativePanel>
+        
     </Grid>
 </Page>

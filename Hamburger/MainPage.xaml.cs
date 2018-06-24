@@ -25,31 +25,53 @@ namespace Hamburger
         public MainPage()
         {
             this.InitializeComponent();
+            BackButton.Visibility = Visibility.Collapsed;
+            MyFrame.Navigate(typeof(Home));
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
             mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
         }
-        
-        private void Home_Tapped(object sender, TappedRoutedEventArgs e)
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            if (MyFrame.CanGoBack)
+            {
+                MyFrame.Navigate(typeof(Home));
+                HomeListBox.IsSelected = true;                
+            }
         }
 
-        private void Finance_Tapped(object sender, TappedRoutedEventArgs e)
+        private void MyListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Frame.Navigate(typeof(Finance));
-        }
+            if (HomeListBox.IsSelected)
+            {
+                MyFrame.Navigate(typeof(Home));
+                BackButton.Visibility = Visibility.Collapsed;
+                Title.Text = "Home";
+            }
 
-        private void Food_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Food));
-        }
+            else if (FinanceListBox.IsSelected)
+            {
+                MyFrame.Navigate(typeof(Finance));
+                BackButton.Visibility = Visibility.Visible;
+                Title.Text = "Finance";
+            }
 
-        private void Travel_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Travel));
+            else if (FoodListBox.IsSelected)
+            {
+                MyFrame.Navigate(typeof(Food));
+                BackButton.Visibility = Visibility.Visible;
+                Title.Text = "Food";
+            }
+
+            else if (TravelListBox.IsSelected)
+            {
+                MyFrame.Navigate(typeof(Travel));
+                BackButton.Visibility = Visibility.Visible;
+                Title.Text = "Travel";
+            }
         }
     }
 }

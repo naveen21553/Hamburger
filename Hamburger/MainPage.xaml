@@ -16,46 +16,48 @@
         </Grid.RowDefinitions>
         <RelativePanel Margin="4,15,6,0">
             <Button Name="HamburgerButton" FontFamily="Segoe MDL2 assets" Content="&#xE700;" Click="HamburgerButton_Click"/>
-            <TextBlock Text="Home" RelativePanel.RightOf="HamburgerButton" RelativePanel.AlignVerticalCenterWith="HamburgerButton"  Margin="10,0,0,0"/>
+            <Button Name="BackButton" RelativePanel.RightOf="HamburgerButton" FontFamily="Segoe MDL2 assets" Content="&#xE112;" Click="BackButton_Click"/>
+            <TextBlock Name="Title" Text="Home" RelativePanel.RightOf="BackButton" RelativePanel.AlignVerticalCenterWith="HamburgerButton"  Margin="10,0,0,0"/>
             <Button Name="SearchButton" RelativePanel.AlignRightWithPanel="True" FontFamily="Segoe MDL2 assets" FontSize="18" Content="&#xE71E;"/>
             <TextBox Name="SearchBox" PlaceholderText="Search" RelativePanel.LeftOf="SearchButton" MinWidth="200"/>
         </RelativePanel>
 
         <SplitView Name="mySplitView" Grid.Row="1" OpenPaneLength="225" CompactPaneLength="40" DisplayMode="CompactInline">
             <SplitView.Pane>
-                <ListBox>
-                    <ListBoxItem Name="Home" Tapped="Home_Tapped">
+                <ListBox Name="MyListBox" SelectionChanged="MyListBox_SelectionChanged">
+                    <ListBoxItem Name="HomeListBox">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 assets" FontSize="18" Text="&#xE10F;"/>
                             <TextBlock Margin="10,0,0,0" Text="Home"/>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem Name="Finance" Tapped="Finance_Tapped">
+                    
+                    <ListBoxItem Name="FinanceListBox">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 assets" FontSize="18" Text="&#xE825;"/>
                             <TextBlock Margin="10,0,0,0" Text="Finance"/>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem Name="Food" Tapped="Food_Tapped">
+                    
+                    <ListBoxItem Name="FoodListBox">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 assets" FontSize="18" Text="&#xED56;"/>
                             <TextBlock Margin="10,0,0,0" Text="Food"/>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem Name="Travel" Tapped="Travel_Tapped">
+                    
+                    <ListBoxItem Name="TravelListBox">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 assets" FontSize="18" Text="&#xE709;"/>
                             <TextBlock Margin="10,0,0,0" Text="Travel"/>
                         </StackPanel>
                     </ListBoxItem>
+                    
                 </ListBox>
+                
             </SplitView.Pane>
             <SplitView.Content>
-                <RelativePanel Margin="20,5,0,0">
-                    <Image Tapped="Finance_Tapped" Source="Assets/Business1.png" Name="FnImg" RelativePanel.AlignLeftWithPanel="True" Height="403" Width="480" Margin="30,10,0,0"/>
-                    <Image Tapped="Food_Tapped" Source="Assets/Cake.png" RelativePanel.RightOf="FnImg" Height="401" Width="480" Margin="30,10,0,-0.4" />
-                    <Image Tapped="Travel_Tapped" Source="Assets/Landscape.png" RelativePanel.Below="FnImg" Height="425" Width="990" Margin="30,10,-585.4,-0.4"/>
-                </RelativePanel>
+                <Frame Name="MyFrame"/>
             </SplitView.Content>
         </SplitView>
         <RelativePanel Grid.Row="2">

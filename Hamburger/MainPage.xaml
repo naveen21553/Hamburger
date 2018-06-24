@@ -18,7 +18,7 @@
             <Button Name="HamburgerButton" FontFamily="Segoe MDL2 assets" Content="&#xE700;" Click="HamburgerButton_Click"/>
             <TextBlock Text="Home" RelativePanel.RightOf="HamburgerButton" RelativePanel.AlignVerticalCenterWith="HamburgerButton"  Margin="10,0,0,0"/>
             <Button Name="SearchButton" RelativePanel.AlignRightWithPanel="True" FontFamily="Segoe MDL2 assets" FontSize="18" Content="&#xE71E;"/>
-            <TextBox Name="SearchBox" RelativePanel.LeftOf="SearchButton" MinWidth="200"/>
+            <TextBox Name="SearchBox" PlaceholderText="Search" RelativePanel.LeftOf="SearchButton" MinWidth="200"/>
         </RelativePanel>
 
         <SplitView Name="mySplitView" Grid.Row="1" OpenPaneLength="225" CompactPaneLength="40" DisplayMode="CompactInline">
